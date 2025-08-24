@@ -16,7 +16,7 @@
   </style>
 </head>
 <body class="bg-black text-white">
- <!-- Navbar -->
+<!-- Navbar -->
 <header class="fixed top-0 inset-x-0 z-50 bg-black border-b border-yellow-500/40">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
     
@@ -26,18 +26,37 @@
       <span class="font-semibold tracking-tight text-yellow-400">Pro Trading Academy</span>
     </a>
 
-    <!-- Nav Buttons (always visible) -->
-    <nav class="flex items-center gap-3 text-sm">
+    <!-- Desktop Nav -->
+    <nav class="hidden sm:flex items-center gap-3 text-sm">
       <a href="#about" class="px-3 py-1.5 rounded-xl bg-neutral-800 text-white hover:bg-yellow-500 hover:text-black transition">About</a>
       <a href="#results" class="px-3 py-1.5 rounded-xl bg-neutral-800 text-white hover:bg-yellow-500 hover:text-black transition">Results</a>
       <a href="#how" class="px-3 py-1.5 rounded-xl bg-neutral-800 text-white hover:bg-yellow-500 hover:text-black transition">How it works</a>
       <a href="#faq" class="px-3 py-1.5 rounded-xl bg-neutral-800 text-white hover:bg-yellow-500 hover:text-black transition">FAQ</a>
       <a href="#contact" class="px-3 py-1.5 rounded-xl bg-yellow-500 text-black font-semibold hover:bg-yellow-400 transition">Join Telegram</a>
     </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="sm:hidden text-yellow-400 text-2xl focus:outline-none">☰</button>
+  </div>
+
+  <!-- Mobile Nav (hidden by default) -->
+  <div id="mobileMenu" class="sm:hidden hidden flex-col bg-black border-t border-yellow-500/40 px-4 py-3 space-y-3">
+    <a href="#about" class="block px-3 py-2 rounded-xl bg-neutral-800 text-white hover:bg-yellow-500 hover:text-black transition">About</a>
+    <a href="#results" class="block px-3 py-2 rounded-xl bg-neutral-800 text-white hover:bg-yellow-500 hover:text-black transition">Results</a>
+    <a href="#how" class="block px-3 py-2 rounded-xl bg-neutral-800 text-white hover:bg-yellow-500 hover:text-black transition">How it works</a>
+    <a href="#faq" class="block px-3 py-2 rounded-xl bg-neutral-800 text-white hover:bg-yellow-500 hover:text-black transition">FAQ</a>
+    <a href="#contact" class="block px-3 py-2 rounded-xl bg-yellow-500 text-black font-semibold hover:bg-yellow-400 transition">Join Telegram</a>
   </div>
 </header>
 
-  </header>
+<!-- Script for Mobile Menu -->
+<script>
+  document.getElementById("menuBtn").addEventListener("click", function() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  });
+</script>
+
+</header>
 
 <!-- Hero -->
 <section id="home" class="relative min-h-[92vh] grid place-items-center overflow-hidden">
@@ -216,11 +235,11 @@
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
-  <a id="waFloat" href="https://wa.me/923153562875" class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 bg-yellow-500 text-black font-semibold px-4 py-3 rounded-2xl shadow-soft hover:bg-yellow-400" aria-label="Chat on WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.94 11.94 0 0012.01 0C5.39 0 .01 5.38.01 12c0 2.1.55 4.09 1.59 5.86L0 24l6.3-1.62A11.94 11.94 0 0012 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.5c-1.86 0-3.64-.5-5.2-1.44l-.37-.22-3.68.94.98-3.58-.24-.37A9.48 9.48 0 1121.5 12c0 5.25-4.26 9.5-9.5 9.5zm5.33-6.73c-.29-.15-1.7-.84-1.96-.94-.26-.1-.45-.15-.65.15-.19.29-.75.94-.92 1.13-.17.19-.34.21-.63.08-.29-.15-1.2-.44-2.28-1.4-.84-.75-1.4-1.68-1.57-1.97-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.15-.65-1.57-.9-2.15-.24-.57-.48-.5-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43s1.02 2.82 1.16 3.01c.15.19 2.02 3.08 4.9 4.32.68.29 1.21.46 1.62.58.68.22 1.29.19 1.77.11.54-.08 1.7-.7 1.94-1.38.24-.68.24-1.26.17-1.38-.06-.11-.24-.18-.53-.33z"/></svg>
-    WhatsApp
-  </a>
+ <!-- Floating Telegram Button (Mobile Only) -->
+<a href="https://t.me/yourTelegramChannel" 
+   class="sm:hidden fixed bottom-20 right-5 z-50 inline-flex items-center gap-2 bg-yellow-500 text-black font-semibold px-4 py-3 rounded-2xl shadow-lg hover:bg-yellow-400 transition">
+   📢 Join Telegram
+</a>
 
   <!-- Scripts -->
   <script>
